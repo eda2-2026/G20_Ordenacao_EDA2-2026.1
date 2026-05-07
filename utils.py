@@ -1,12 +1,4 @@
-"""
-utils.py — Utilitários de geração de dados e benchmark.
 
-
-Funções auxiliares que servem a todo o projeto:
-  • gerar_pacotes()   — cria massa de dados aleatórios
-  • medir_tempo()     — decorador para benchmark de algoritmos
-  • executar_benchmark() — roda um algoritmo e retorna tempo + resultado
-"""
 
 from __future__ import annotations
 
@@ -19,31 +11,13 @@ from typing import Any, Callable, List
 from models import Pacote
 
 
-# ======================================================================
-# GERAÇÃO DE DADOS ALEATÓRIOS
-# ======================================================================
-
 def gerar_pacotes(quantidade: int = 10_000, seed: int | None = 42) -> List[Pacote]:
-    """Gera uma lista de pacotes com atributos aleatórios.
-
-    Args:
-        quantidade: número de pacotes a gerar (padrão: 10.000).
-        seed:       semente para reprodutibilidade. Use None para
-                    dados verdadeiramente aleatórios.
-
-    Returns:
-        Lista de objetos Pacote com dados realistas.
-
-    Exemplo:
-        >>> pacotes = gerar_pacotes(1000, seed=42)
-        >>> len(pacotes)
-        1000
-    """
+    
     if seed is not None:
         random.seed(seed)
 
     pacotes = []
-    # Base temporal: últimos 30 dias
+    
     agora = datetime.now()
 
     for _ in range(quantidade):
@@ -62,24 +36,8 @@ def gerar_pacotes(quantidade: int = 10_000, seed: int | None = 42) -> List[Pacot
     return pacotes
 
 
-# ======================================================================
-# BENCHMARK — MEDIÇÃO DE TEMPO DE EXECUÇÃO
-# ======================================================================
-
 def medir_tempo(func: Callable) -> Callable:
-    """Decorador que mede o tempo de execução de uma função.
-
-    Imprime o resultado no console em microssegundos (μs),
-    milissegundos (ms) e segundos (s) para fácil leitura.
-
-    Uso:
-        @medir_tempo
-        def minha_funcao(dados):
-            ...
-
-    Ou inline:
-        resultado = medir_tempo(merge_sort)(pacotes, key=lambda p: p.peso)
-    """
+    
     @functools.wraps(func)
     def wrapper(*args, **kwargs):
         inicio = time.perf_counter_ns()
@@ -92,13 +50,13 @@ def medir_tempo(func: Callable) -> Callable:
         tempo_s = tempo_ns / 1_000_000_000
 
         print(
-            f"  ⏱  {func.__name__:.<30s} "
+            f"    {func.__name__:.<30s} "
             f"{tempo_us:>12,.0f} μs  |  "
             f"{tempo_ms:>8,.2f} ms  |  "
             f"{tempo_s:>6,.4f} s"
         )
 
-        # Anexa o tempo medido ao resultado para uso programático
+        
         wrapper.ultimo_tempo_ns = tempo_ns
         wrapper.ultimo_tempo_us = tempo_us
         wrapper.ultimo_tempo_ms = tempo_ms
@@ -118,25 +76,7 @@ def executar_benchmark(
     reverse: bool = False,
     label: str = "",
 ) -> tuple[List[Any], float]:
-    """Executa um algoritmo de ordenação e mede o tempo.
-
-    Args:
-        algoritmo: função de ordenação (ex: merge_sort).
-        dados:     lista de dados a ordenar.
-        key:       função de extração de chave.
-        reverse:   se True, ordena em ordem decrescente.
-        label:     rótulo para exibição (opcional).
-
-    Returns:
-        Tupla (lista_ordenada, tempo_em_microssegundos).
-
-    Exemplo:
-        >>> resultado, tempo = executar_benchmark(
-        ...     merge_sort, pacotes,
-        ...     key=lambda p: p.peso,
-        ...     label="Merge Sort por peso"
-        ... )
-    """
+    
     nome = label or algoritmo.__name__
 
     inicio = time.perf_counter_ns()
@@ -146,23 +86,13 @@ def executar_benchmark(
     tempo_us = (fim - inicio) / 1_000
     tempo_ms = (fim - inicio) / 1_000_000
 
-    print(f"  ⏱  {nome:.<40s} {tempo_us:>12,.0f} μs  ({tempo_ms:,.2f} ms)")
+    print(f"    {nome:.<40s} {tempo_us:>12,.0f} μs  ({tempo_ms:,.2f} ms)")
 
     return resultado, tempo_us
 
 
-# ======================================================================
-# UTILITÁRIOS DE EXIBIÇÃO
-# ======================================================================
-
 def exibir_pacotes(pacotes: List[Pacote], titulo: str = "", limite: int = 10) -> None:
-    """Exibe os primeiros `limite` pacotes de forma formatada.
-
-    Args:
-        pacotes: lista de pacotes a exibir.
-        titulo:  título da seção (opcional).
-        limite:  quantos pacotes mostrar (padrão: 10).
-    """
+    
     if titulo:
         print(f"\n{'─' * 70}")
         print(f"  {titulo}")
@@ -181,11 +111,7 @@ def verificar_ordenacao(
     key: Callable[[Any], Any],
     reverse: bool = False,
 ) -> bool:
-    """Verifica se uma lista está corretamente ordenada.
-
-    Returns:
-        True se a lista está ordenada conforme a chave, False caso contrário.
-    """
+    
     for i in range(len(pacotes) - 1):
         a, b = key(pacotes[i]), key(pacotes[i + 1])
         if (not reverse and a > b) or (reverse and a < b):
