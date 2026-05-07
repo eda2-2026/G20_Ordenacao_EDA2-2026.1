@@ -1,4 +1,4 @@
-# 📦 Simulador de Logística — Visão Geral do Projeto
+#  Simulador de Logística — Visão Geral do Projeto
 
 ## Estrutura de Arquivos Criada
 
@@ -16,13 +16,13 @@ G20_Ordenacao_EDA2-2026.1/
 └── LICENSE
 ```
 
-## Cenários Implementados e Testados ✅
+## Cenários Implementados e Testados 
 
 | Cenário | Algoritmo | Tempo (n=3000) | Status |
 |---------|-----------|----------------|--------|
-| A — Urgência (prioridade + data) | Merge Sort (2 passos, estável) | ~24ms | ✅ |
-| B — Distribuição Geográfica (CEP) | Radix Sort (LSD, 8 dígitos) | ~6.6ms | ✅ |
-| C — Eficiência de Carga (peso) | Quick Sort (mediana-de-três) | ~9ms | ✅ |
+| A — Urgência (prioridade + data) | Merge Sort (2 passos, estável) | ~24ms | OK |
+| B — Distribuição Geográfica (CEP) | Radix Sort (LSD, 8 dígitos) | ~6.6ms | OK |
+| C — Eficiência de Carga (peso) | Quick Sort (mediana-de-três) | ~9ms | OK |
 
 ## Benchmark Comparativo (n=3000, critério: peso)
 
@@ -49,11 +49,11 @@ G20_Ordenacao_EDA2-2026.1/
 
 | Algoritmo | Estável? | Impacto na Logística |
 |-----------|----------|---------------------|
-| Merge Sort | ✅ | **Essencial** no Cenário A — preserva sub-ordem por data ao ordenar por prioridade |
-| Radix Sort | ✅ | Preserva ordem original para CEPs iguais |
-| Quick Sort | ❌ | Aceitável no Cenário C — ordenação single-key (só peso) |
-| Selection Sort | ❌ | Evitar em multi-key sort — destrói sub-ordens prévias |
-| Heap Sort | ❌ | Instável, mas garante O(n log n) no pior caso |
+| Merge Sort | SIM | **Essencial** no Cenário A — preserva sub-ordem por data ao ordenar por prioridade |
+| Radix Sort | SIM | Preserva ordem original para CEPs iguais |
+| Quick Sort | NÃO | Aceitável no Cenário C — ordenação single-key (só peso) |
+| Selection Sort | NÃO | Evitar em multi-key sort — destrói sub-ordens prévias |
+| Heap Sort | NÃO | Instável, mas garante O(n log n) no pior caso |
 
 ## Sugestões de Melhoria
 

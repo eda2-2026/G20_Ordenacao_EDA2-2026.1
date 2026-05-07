@@ -1,8 +1,6 @@
 """
 sorting/linearithmic.py — Algoritmos de ordenação O(n log n).
 
-Responsável: [Membro 2 — definir]
-
 Contém: Merge Sort, Quick Sort, Heap Sort, Shell Sort.
 
 Estes são os algoritmos mais utilizados na prática para ordenação
@@ -20,7 +18,7 @@ from typing import Any, Callable, List
 # ======================================================================
 # Complexidade:  Melhor O(n log n) | Médio O(n log n) | Pior O(n log n)
 # Espaço:        O(n) — precisa de lista auxiliar
-# Estabilidade:  ✅ ESTÁVEL
+# Estabilidade:   ESTÁVEL
 #
 # NOTA SOBRE ESTABILIDADE:
 #   O Merge Sort é o algoritmo IDEAL para o Cenário A (Urgência)
@@ -101,7 +99,7 @@ def _merge(
 # ======================================================================
 # Complexidade:  Melhor O(n log n) | Médio O(n log n) | Pior O(n²)
 # Espaço:        O(log n) — pilha de recursão
-# Estabilidade:  ❌ INSTÁVEL
+# Estabilidade:   INSTÁVEL
 #
 # NOTA SOBRE ESTABILIDADE:
 #   O Quick Sort é INSTÁVEL na versão clássica in-place.
@@ -185,7 +183,7 @@ def _partition(
 # ======================================================================
 # Complexidade:  Melhor O(n log n) | Médio O(n log n) | Pior O(n log n)
 # Espaço:        O(1) — in-place
-# Estabilidade:  ❌ INSTÁVEL
+# Estabilidade:   INSTÁVEL
 #
 # NOTA SOBRE ESTABILIDADE:
 #   O Heap Sort é instável devido à operação de heapify, que pode
@@ -255,7 +253,7 @@ def _heapify(
 # ======================================================================
 # Complexidade:  Depende da sequência de gaps. Com Knuth: O(n^(3/2))
 # Espaço:        O(1) — in-place
-# Estabilidade:  ❌ INSTÁVEL
+# Estabilidade:   INSTÁVEL
 #
 # NOTA SOBRE ESTABILIDADE:
 #   O Shell Sort é instável porque compara e troca elementos distantes

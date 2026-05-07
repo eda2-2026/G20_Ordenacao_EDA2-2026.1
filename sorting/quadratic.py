@@ -29,7 +29,7 @@ from typing import Any, Callable, List
 # ======================================================================
 # Complexidade:  Melhor O(n)  |  Médio O(n²)  |  Pior O(n²)
 # Espaço:        O(1) — in-place
-# Estabilidade:  ✅ ESTÁVEL
+# Estabilidade:   ESTÁVEL
 #
 # NOTA SOBRE ESTABILIDADE:
 #   O Bubble Sort preserva a ordem relativa de elementos iguais.
@@ -75,7 +75,7 @@ def bubble_sort(
 # ======================================================================
 # Complexidade:  Melhor O(n²)  |  Médio O(n²)  |  Pior O(n²)
 # Espaço:        O(1) — in-place
-# Estabilidade:  ❌ INSTÁVEL
+# Estabilidade:   INSTÁVEL
 #
 # NOTA SOBRE ESTABILIDADE:
 #   O Selection Sort NÃO preserva a ordem relativa de elementos iguais.
@@ -120,7 +120,7 @@ def selection_sort(
 # ======================================================================
 # Complexidade:  Melhor O(n)  |  Médio O(n²)  |  Pior O(n²)
 # Espaço:        O(1) — in-place
-# Estabilidade:  ✅ ESTÁVEL
+# Estabilidade:    ESTÁVEL
 #
 # NOTA SOBRE ESTABILIDADE:
 #   O Insertion Sort é estável porque só move elementos para trás
