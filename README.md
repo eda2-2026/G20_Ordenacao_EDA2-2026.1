@@ -1,10 +1,10 @@
-# 📦 Simulador de Logística para E-commerce
+# Simulador de Logística para E-commerce
 
 **Estruturas de Dados e Algoritmos II — 2026.1 | Grupo G20**
 
 Simulador que utiliza algoritmos de ordenação para processar pacotes em cenários reais de logística de e-commerce.
 
-## 📁 Estrutura do Projeto
+## Estrutura do Projeto
 
 ```
 G20_Ordenacao_EDA2-2026.1/
@@ -20,7 +20,7 @@ G20_Ordenacao_EDA2-2026.1/
 └── README.md
 ```
 
-## 🚀 Como Executar
+## Como Executar
 
 ```bash
 # Executar todos os cenários com 10.000 pacotes (padrão)
@@ -41,7 +41,7 @@ python main.py -c benchmark -n 5000
 python main.py -n 10000 -s 123
 ```
 
-## 📋 Cenários de Logística
+## Cenários de Logística
 
 | Cenário | Objetivo | Algoritmo | Chave | Justificativa |
 |---------|----------|-----------|-------|---------------|
@@ -49,33 +49,33 @@ python main.py -n 10000 -s 123
 | **B — Distribuição** | Agrupamento regional | Radix Sort | `cep` (8 dígitos) | O(d·n) linear para dígitos fixos |
 | **C — Carga** | Otimização de peso | Quick Sort | `peso` | O(n log n) médio, in-place, cache-friendly |
 
-## 📊 Algoritmos Implementados
+## Algoritmos Implementados
 
 | Algoritmo | Complexidade (Médio) | Espaço | Estável? | Arquivo |
 |-----------|---------------------|--------|----------|---------|
-| Bubble Sort | O(n²) | O(1) | ✅ Sim | `quadratic.py` |
-| Selection Sort | O(n²) | O(1) | ❌ Não | `quadratic.py` |
-| Insertion Sort | O(n²) | O(1) | ✅ Sim | `quadratic.py` |
-| Merge Sort | O(n log n) | O(n) | ✅ Sim | `linearithmic.py` |
-| Quick Sort | O(n log n) | O(log n) | ❌ Não | `linearithmic.py` |
-| Heap Sort | O(n log n) | O(1) | ❌ Não | `linearithmic.py` |
-| Shell Sort | O(n^1.5) | O(1) | ❌ Não | `linearithmic.py` |
-| Bucket Sort | O(n+k) | O(n+k) | ✅ Sim | `linear.py` |
-| Counting Sort | O(n+k) | O(n+k) | ✅ Sim | `linear.py` |
-| Radix Sort | O(d·n) | O(n+b) | ✅ Sim | `linear.py` |
+| Bubble Sort | O(n²) | O(1) | Sim | `quadratic.py` |
+| Selection Sort | O(n²) | O(1) | Não | `quadratic.py` |
+| Insertion Sort | O(n²) | O(1) | Sim | `quadratic.py` |
+| Merge Sort | O(n log n) | O(n) | Sim | `linearithmic.py` |
+| Quick Sort | O(n log n) | O(log n) | Não | `linearithmic.py` |
+| Heap Sort | O(n log n) | O(1) | Não | `linearithmic.py` |
+| Shell Sort | O(n^1.5) | O(1) | Não | `linearithmic.py` |
+| Bucket Sort | O(n+k) | O(n+k) | Sim | `linear.py` |
+| Counting Sort | O(n+k) | O(n+k) | Sim | `linear.py` |
+| Radix Sort | O(d·n) | O(n+b) | Sim | `linear.py` |
 
-## 🔀 Divisão de Trabalho 
+## Divisão de Trabalho 
 
 | Membro | Responsabilidade | Arquivos |
 |--------|-----------------|----------|
 | **Gustavo** | Algoritmos quadráticos + lineares + utilitários | `quadratic.py`, `linear.py`, `utils.py` |
 | **Pedro** | Algoritmos linearítmicos + modelo + integração | `linearithmic.py`, `models.py`, `main.py` |
 
-## 🧪 Requisitos
+## Requisitos
 
 - Python 3.10+
 - Sem dependências externas (apenas biblioteca padrão)
 
-## 📝 Licença
+## Licença
 
 Consulte o arquivo [LICENSE](LICENSE).
