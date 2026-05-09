@@ -11,6 +11,10 @@ G20_Ordenacao_EDA2-2026.1/
 ├── main.py              # Ponto de entrada — cenários de logística
 ├── models.py            # Classe Pacote (modelagem de dados)
 ├── utils.py             # Geração de dados e benchmark
+├── benchmark_chart.py   # Gerador de gráficos comparativos (Matplotlib)
+├── graficos/            # Pasta com gráficos PNG e resultados em CSV
+├── requirements.txt     # Dependências externas do projeto
+├── tests/               # Suíte de testes automatizados (Pytest)
 ├── sorting/             # Pacote de algoritmos de ordenação
 │   ├── __init__.py      # Re-exporta todos os algoritmos
 │   ├── quadratic.py     # O(n²):     Bubble, Selection, Insertion
@@ -23,6 +27,9 @@ G20_Ordenacao_EDA2-2026.1/
 ## Como Executar
 
 ```bash
+# Instalar as dependências (pytest, matplotlib)
+pip install -r requirements.txt
+
 # Executar todos os cenários com 10.000 pacotes (padrão)
 python main.py
 
@@ -39,6 +46,12 @@ python main.py -c benchmark -n 5000
 
 # Definir seed para reprodutibilidade
 python main.py -n 10000 -s 123
+
+# Gerar gráficos de benchmark (Matplotlib) e exportar resultados para CSV
+python benchmark_chart.py --salvar --csv
+
+# Executar a suíte de testes automatizados
+pytest tests/
 ```
 
 ## Cenários de Logística
@@ -74,7 +87,7 @@ python main.py -n 10000 -s 123
 ## Requisitos
 
 - Python 3.10+
-- Sem dependências externas (apenas biblioteca padrão)
+- Pacotes externos: `pytest` (para testes) e `matplotlib` (para gráficos)
 
 ## Licença
 
