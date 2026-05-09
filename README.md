@@ -77,13 +77,6 @@ pytest tests/
 | Counting Sort | O(n+k) | O(n+k) | Sim | `linear.py` |
 | Radix Sort | O(d·n) | O(n+b) | Sim | `linear.py` |
 
-## Divisão de Trabalho 
-
-| Membro | Responsabilidade | Arquivos |
-|--------|-----------------|----------|
-| **Gustavo** | Algoritmos quadráticos + lineares + utilitários | `quadratic.py`, `linear.py`, `utils.py` |
-| **Pedro** | Algoritmos linearítmicos + modelo + integração | `linearithmic.py`, `models.py`, `main.py` |
-
 ## Requisitos
 
 - Python 3.10+
