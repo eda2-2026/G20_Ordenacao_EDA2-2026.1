@@ -7,6 +7,10 @@ G20_Ordenacao_EDA2-2026.1/
 ├── main.py                  # Ponto de entrada + 3 cenários + benchmark
 ├── models.py                # Classe Pacote (dataclass)
 ├── utils.py                 # Geração de dados + medição de tempo
+├── benchmark_chart.py       # Gerador de gráficos e CSV
+├── graficos/                # Imagens geradas e benchmark_resultados.csv
+├── requirements.txt         # Lista de dependências (pytest, matplotlib)
+├── tests/                   # Testes automatizados com pytest
 ├── sorting/                 # Pacote de algoritmos
 │   ├── __init__.py          # Re-exporta todos os 10 algoritmos
 │   ├── quadratic.py         # Bubble, Selection, Insertion (O(n²))
@@ -55,19 +59,25 @@ G20_Ordenacao_EDA2-2026.1/
 | Selection Sort | NÃO | Evitar em multi-key sort — destrói sub-ordens prévias |
 | Heap Sort | NÃO | Instável, mas garante O(n log n) no pior caso |
 
-## Sugestões de Melhoria
+## Melhorias Implementadas
 
-1. **Testes unitários** — Criar `tests/` com pytest para validar cada algoritmo individualmente
-2. **Visualização gráfica** — Usar matplotlib para gerar gráficos de desempenho (tempo × n)
-3. **Exportação CSV** — Salvar resultados do benchmark para análise posterior
-4. **Algoritmos híbridos** — Implementar IntroSort (Quick + Heap + Insertion) para demonstrar uso prático
-5. **Análise de estabilidade visual** — Cenário demonstrando como um algoritmo instável quebra multi-key sort
+1. ✅ **Testes unitários automatizados** — Utilizando `pytest` para validar comportamento e estabilidade dos algoritmos.
+2. ✅ **Visualização gráfica de desempenho** — Utilizando `matplotlib` para gerar curvas de desempenho (tempo × n) nos casos médio, melhor e pior.
+3. ✅ **Exportação CSV** — Salvando os resultados dos tempos de execução para análise comparativa aprofundada.
+
+## Futuras Sugestões de Melhoria
+
+1. **Algoritmos híbridos** — Implementar IntroSort (Quick + Heap + Insertion) para demonstrar uso prático
+2. **Análise de estabilidade visual** — Cenário demonstrando como um algoritmo instável quebra multi-key sort
 
 ## Como Executar
 
 ```bash
+pip install -r requirements.txt   # Instalar dependências
 python main.py                    # Todos os cenários (10.000 pacotes)
 python main.py -n 50000           # 50.000 pacotes
 python main.py -c A               # Só cenário A
 python main.py -c benchmark -n 5000  # Benchmark comparativo
+python benchmark_chart.py --salvar --csv  # Gráficos e CSV
+pytest tests/                     # Rodar os testes automatizados
 ```

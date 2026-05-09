@@ -1,0 +1,25 @@
+# Ignorar pastas e arquivos gerados pelo Python e pelo Sistema Operacional
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.env/
+.venv/
+env.bak/
+venv.bak/
+
+# Ignorar pastas geradas pelo Pytest
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Ignorar arquivos do VS Code ou outros editores
+.vscode/
+.idea/
+*.swp
+
+# Gráficos de benchmark (opcional, pode remover se quiser manter no repositório)
+graficos/
