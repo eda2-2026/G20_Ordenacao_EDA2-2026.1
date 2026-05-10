@@ -90,7 +90,7 @@ pytest tests/
 
 ## Demonstração Visual
 
-Vídeo:** [![Vídeo de Demonstração](https://youtu.be/owIR8NN4pF8)
+[![Vídeo](https://img.youtube.com/vi/owIR8NN4pF8/0.jpg)](https://www.youtube.com/watch?v=owIR8NN4pF8)
 
 ## Licença
 
