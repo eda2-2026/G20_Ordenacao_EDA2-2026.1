@@ -4,6 +4,12 @@
 
 Simulador que utiliza algoritmos de ordenação para processar pacotes em cenários reais de logística de e-commerce.
 
+## Alunos
+| Matrícula | Aluno |
+| -- | -- |
+| 241025990  | Pedro Henrique Ferreira Xavier |
+| 241025247 |  Gustavo Xavier Evangelista  |
+
 ## Estrutura do Projeto
 
 ```
@@ -82,6 +88,11 @@ pytest tests/
 - Python 3.10+
 - Pacotes externos: `pytest` (para testes) e `matplotlib` (para gráficos)
 
+## Demonstração Visual
+
+Vídeo:** [![Vídeo de Demonstração](https://youtu.be/owIR8NN4pF8)
+
 ## Licença
 
 Consulte o arquivo [LICENSE](LICENSE).
+
