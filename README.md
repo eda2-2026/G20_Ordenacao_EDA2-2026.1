@@ -4,6 +4,10 @@
 
 Simulador que utiliza algoritmos de ordenação para processar pacotes em cenários reais de logística de e-commerce.
 
+## Demonstração Visual
+
+[![Vídeo](https://img.youtube.com/vi/owIR8NN4pF8/0.jpg)](https://www.youtube.com/watch?v=owIR8NN4pF8)
+
 ## Alunos
 | Matrícula | Aluno |
 | -- | -- |
@@ -87,10 +91,6 @@ pytest tests/
 
 - Python 3.10+
 - Pacotes externos: `pytest` (para testes) e `matplotlib` (para gráficos)
-
-## Demonstração Visual
-
-[![Vídeo](https://img.youtube.com/vi/owIR8NN4pF8/0.jpg)](https://www.youtube.com/watch?v=owIR8NN4pF8)
 
 ## Licença
 
